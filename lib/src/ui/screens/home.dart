@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   MovieAPIProvider movieAPIProvider = MovieAPIProvider();
   final String? apiKey = dotenv.env['apiKey'];
 
-  // refresh function to reload the data
   Future<void> _refreshData() async {
     setState(() {});
   }
@@ -68,41 +67,26 @@ class _HomePageState extends State<HomePage> {
                   url:
                       'https://api.themoviedb.org/3/movie/popular?api_key=$apiKey',
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
                 const TitleText(title: 'Trending Now'),
                 MovieListView(
                     movieAPIProvider: movieAPIProvider,
                     url:
                         'https://api.themoviedb.org/3/trending/movie/day?api_key=$apiKey'),
-                const SizedBox(
-                  height: 20,
-                ),
                 const TitleText(title: 'Now Playing'),
                 MovieListView(
                     movieAPIProvider: movieAPIProvider,
                     url:
                         'https://api.themoviedb.org/3/movie/now_playing?api_key=$apiKey'),
-                const SizedBox(
-                  height: 20,
-                ),
                 const TitleText(title: 'Top 10 Shows in Pakistan Today'),
                 MovieListView(
                     movieAPIProvider: movieAPIProvider,
                     url:
                         'https://api.themoviedb.org/3/discover/movie?api_key=$apiKey&region=PK&sort_by=popularity.desc'),
-                const SizedBox(
-                  height: 20,
-                ),
                 const TitleText(title: 'Top-Rated Movies'),
                 MovieListView(
                     movieAPIProvider: movieAPIProvider,
                     url:
                         'https://api.themoviedb.org/3/movie/top_rated?api_key=$apiKey&region=PK&sort_by=popularity.desc'),
-                const SizedBox(
-                  height: 20,
-                ),
               ],
             ),
           ),

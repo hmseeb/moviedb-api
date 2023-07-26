@@ -1,4 +1,4 @@
-import 'package:bloc_pattern_arc/src/ui/screens/home.dart';
+import 'package:bloc_pattern_arc/src/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class MovieApp extends StatelessWidget {
@@ -9,12 +9,11 @@ class MovieApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: const ColorScheme.dark(
-            primary: Colors.blue,
-            secondary: Colors.red,
-          )),
-      home: const HomePage(),
+        useMaterial3: true,
+        colorScheme:
+            const ColorScheme.dark(), // Handle the possible null value here
+      ),
+      home: const SplashScreen(),
     );
   }
 }
